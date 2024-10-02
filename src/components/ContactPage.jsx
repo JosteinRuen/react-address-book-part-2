@@ -2,10 +2,10 @@ import React from 'react';
 import { Routes, Route,useContext } from 'react-router-dom';
 import ContactList from './ContactList';
 import ContactDetail from './ContactDetail';
-import { ContactsContext } from '../App';
+import { AddressBookContext } from '../App';
 
 function ContactPage() {
-  const {contacts} = useContext(ContactsContext);
+  const {contacts} = useContext(AddressBookContext);
   return (
     <main className="dashboard">
       <h2>Contacts</h2>

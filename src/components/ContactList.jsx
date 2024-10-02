@@ -1,10 +1,10 @@
 import { useContext } from 'react'
 import ContactListItem from './ContactListItem'
-import { ContactsContext } from '../App';
+import { AddressBookContext } from '../App';
 
 
 function ContactList() {
-    const { contacts } = useContext(ContactsContext);
+    const { contacts } = useContext(AddressBookContext);
 
     return(
         <ul>

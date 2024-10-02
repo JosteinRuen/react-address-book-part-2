@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { ContactsContext } from '../App';
+import { AddressBookContext } from '../App';
 
 
 function ContactDetail() {
-  const {contacts} = useContext(ContactsContext);
+  const {contacts} = useContext(AddressBookContext);
   const { id } = useParams();
   const contact = contacts.find(contact => contact.id === parseInt(id));
 

@@ -7,7 +7,7 @@ import AddContact from './components/AddContact';
 import { useContext, createContext } from 'react';
 
 
-export const ContactsContext = createContext();
+export const AddressBookContext = createContext();
 
 function App() {
     const [contacts, setContacts] = useState([]);
@@ -36,7 +36,7 @@ function App() {
       };
     return (
         <>
-        <ContactsContext.Provider value={{ contacts, setContacts, addContact }}>
+        <AddressBookContext.Provider value={{ contacts, setContacts, addContact }}>
         <header>
             <h1>My Address book</h1>
             <nav>
@@ -55,7 +55,7 @@ function App() {
             <Route path="/view/:id" element={<ContactDetail />} />
             <Route path= '/add' element={<AddContact />} />
         </Routes>
-        </ContactsContext.Provider>
+        </AddressBookContext.Provider>
         </>
     );
 }

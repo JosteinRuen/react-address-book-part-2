@@ -1,10 +1,10 @@
 // src/components/AddContact.jsx
 import React, { useState, useContext } from 'react';
-import { ContactsContext } from '../App';
+import { AddressBookContext } from '../App';
 
 
 function AddContact() {
-  const { contacts, setContacts } = useContext(ContactsContext);
+  const { contacts, setContacts } = useContext(AddressBookContext);
   const [contact, setContact] = useState({
     firstName: '',
     lastName: '',
