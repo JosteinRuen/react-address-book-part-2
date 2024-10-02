@@ -1,7 +1,10 @@
+import { useContext } from 'react'
 import ContactListItem from './ContactListItem'
+import { ContactsContext } from '../App';
 
-function ContactList(props) {
-    const { contacts } = props
+
+function ContactList() {
+    const { contacts } = useContext(ContactsContext);
 
     return(
         <ul>

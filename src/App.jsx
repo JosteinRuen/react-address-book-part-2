@@ -7,6 +7,7 @@ import AddContact from './components/AddContact';
 import { useContext, createContext } from 'react';
 
 
+export const ContactsContext = createContext();
 
 function App() {
     const [contacts, setContacts] = useState([]);
@@ -34,7 +35,9 @@ function App() {
         setContacts([...contacts, newContact]);
       };
     return (
-        <><header>
+        <>
+        <ContactsContext.Provider value={{ contacts, setContacts, addContact }}>
+        <header>
             <h1>My Address book</h1>
             <nav>
                 <ul>
@@ -48,10 +51,12 @@ function App() {
             </nav>
         </header>
         <Routes>
-            <Route path='/' element={<ContactPage contacts={contacts} setContacts={setContacts} />} />
-            <Route path="/view/:id" element={<ContactDetail contacts={contacts} />} />
-            <Route path= '/add' element={<AddContact addContact={addContact} />} />
-        </Routes></>
+            <Route path='/' element={<ContactPage  />} />
+            <Route path="/view/:id" element={<ContactDetail />} />
+            <Route path= '/add' element={<AddContact />} />
+        </Routes>
+        </ContactsContext.Provider>
+        </>
     );
 }
 
