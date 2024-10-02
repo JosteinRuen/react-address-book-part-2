@@ -5,7 +5,7 @@ function ContactListItem(props){
 
     return(<li>
         <h4>
-            {person.firstName} <Link to={`/`}>View</Link>
+            {person.firstName} {person.lastName} <Link to={`/view/${person.id}`}>View</Link>
         </h4>
     </li>)
 }
